@@ -1,7 +1,7 @@
 {
-  "name": "webpack-demo",
+  "name": "webpack101",
   "version": "1.0.0",
-  "description": "",
+  "description": "webpack project to test it's features",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,7 +11,7 @@
     "clean": "rimraf ./dist/*"
   },
   "keywords": [],
-  "author": "Joe Eames",
+  "author": "Jorge Ramirez",
   "license": "ISC",
   "devDependencies": {
     "babel": "^6.23.0",
@@ -26,6 +26,8 @@
     "jshint-loader": "^0.8.3",
     "node-libs-browser": "^0.5.3",
     "node-sass": "^4.5.0",
+    "pug": "^2.0.0-beta11",
+    "pug-loader": "^2.3.0",
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.14.1",
