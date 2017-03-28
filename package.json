@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server",
-    "prod": "webpack -p"
+    "preprod": "npm run clean",
+    "prod": "webpack -p",
+    "clean": "rimraf ./dist/*"
   },
   "keywords": [],
   "author": "Joe Eames",
@@ -24,6 +26,7 @@
     "jshint-loader": "^0.8.3",
     "node-libs-browser": "^0.5.3",
     "node-sass": "^4.5.0",
+    "rimraf": "^2.6.1",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.14.1",
     "webpack": "^2.2.1",

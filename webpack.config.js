@@ -3,10 +3,13 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require("path");
 
 module.exports = {
-    entry: './src/app.js',
+    entry: {
+        app: './src/app.js',
+        contact: './src/contact.js'
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'app.bundle.js'
+        filename: '[name].bundle.js'
     },
     module: {
         rules: [
@@ -39,7 +42,16 @@ module.exports = {
            //     collapseWhitespace: true  
            // },
             hash: true,
+            // filename: './../index.html', location of generated file
+            excludeChunks: ['contact'],
             template: './src/index.html'
+        }),
+        new HtmlWebpackPlugin({
+            title: 'titulo Gato contact',
+            hash: true,
+            chunks: ['contact'], //excludeChunks: ['app'] is the equivalent
+            filename: 'contact.html',
+            template: './src/contact.html'
         }),
         new ExtractTextPlugin({
             filename: 'app.css',
