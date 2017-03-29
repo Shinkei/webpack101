@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server",
-    "preprod": "npm run clean",
+    "preprod": "NODE_ENV=production npm run clean",
     "prod": "webpack -p",
     "clean": "rimraf ./dist/*"
   },
