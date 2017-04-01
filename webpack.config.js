@@ -36,6 +36,16 @@ module.exports = {
             {
                 test: /\.pug$/,
                 use: 'pug-loader'
+            },
+            {
+                test: /\.(gif|svg|png|jpe?g)$/i,
+                use: [
+                    'file-loader',
+                    {    //this shouldn't be an object, just the name of the loader but a bug make it crash
+                        loader:'image-webpack-loader',
+                        options:{}
+                    }
+                ]
             }
         ]
     },
@@ -50,9 +60,9 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'titulo perro',
-           // minify: {
-           //     collapseWhitespace: true  
-           // },
+            // minify: {
+            //     collapseWhitespace: isProd
+            // },
             hash: true,
             // filename: './../index.html', location of generated file
             excludeChunks: ['contact'],
